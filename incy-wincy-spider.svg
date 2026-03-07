@@ -1,170 +1,181 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="686" height="576">
+<svg xmlns="http://www.w3.org/2000/svg" width="686" height="641.6600000000001">
 <rect width="100%" height="100%" fill="white"/>
 <text x="343.0" y="40" font-family="serif" font-size="28" font-weight="normal" text-anchor="middle" fill="#222">Incy Wincy Spider</text>
 <text x="343.0" y="76" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#555">For 14-key toy piano</text>
 <text x="343.0" y="96" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#555">0 means a rough gap, n* means black key</text>
-<line x1="70" y1="166" x2="662" y2="166" stroke="#444" stroke-width="1"/>
-<line x1="70" y1="177" x2="662" y2="177" stroke="#444" stroke-width="1"/>
-<line x1="70" y1="188" x2="662" y2="188" stroke="#444" stroke-width="1"/>
-<line x1="70" y1="199" x2="662" y2="199" stroke="#444" stroke-width="1"/>
-<line x1="70" y1="210" x2="662" y2="210" stroke="#444" stroke-width="1"/>
+<line x1="50" y1="166" x2="662" y2="166" stroke="#444" stroke-width="1"/>
+<line x1="50" y1="177" x2="662" y2="177" stroke="#444" stroke-width="1"/>
+<line x1="50" y1="188" x2="662" y2="188" stroke="#444" stroke-width="1"/>
+<line x1="50" y1="199" x2="662" y2="199" stroke="#444" stroke-width="1"/>
+<line x1="50" y1="210" x2="662" y2="210" stroke="#444" stroke-width="1"/>
+<line x1="50" y1="166" x2="50" y2="210" stroke="#444" stroke-width="1"/>
+<line x1="662" y1="166" x2="662" y2="210" stroke="#444" stroke-width="1"/>
 <text x="62" y="207.25" font-size="55" font-family="FreeSerif, DejaVu Serif, Times New Roman, serif" text-anchor="middle" fill="#222">&#x1D11E;</text>
-<circle cx="90" cy="206.6153846153846" r="6.16" fill="#fbc02d" stroke="none"/>
-<text x="90" y="210.6153846153846" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">7</text>
-<text x="90" y="232" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">In-</text>
-<circle cx="134" cy="206.6153846153846" r="6.16" fill="#fbc02d" stroke="none"/>
-<text x="134" y="210.6153846153846" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">7</text>
-<text x="134" y="232" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">cy </text>
-<circle cx="178" cy="206.6153846153846" r="6.16" fill="#fbc02d" stroke="none"/>
-<text x="178" y="210.6153846153846" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">7</text>
-<text x="178" y="232" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">win-</text>
-<circle cx="222" cy="199.84615384615384" r="6.16" fill="#43a047" stroke="none"/>
-<text x="222" y="203.84615384615384" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">8</text>
-<text x="222" y="232" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">cy </text>
-<circle cx="266" cy="193.0769230769231" r="6.16" fill="#2e7d32" stroke="none"/>
-<text x="266" y="197.0769230769231" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">9</text>
-<text x="266" y="232" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">spi-</text>
-<circle cx="310" cy="193.0769230769231" r="6.16" fill="#2e7d32" stroke="none"/>
-<text x="310" y="197.0769230769231" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">9</text>
-<text x="310" y="232" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">der </text>
-<circle cx="354" cy="206.6153846153846" r="6.16" fill="#fbc02d" stroke="none"/>
-<text x="354" y="210.6153846153846" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">7</text>
-<text x="354" y="232" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">climbed </text>
-<circle cx="398" cy="199.84615384615384" r="6.16" fill="#43a047" stroke="none"/>
-<text x="398" y="203.84615384615384" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">8</text>
-<text x="398" y="232" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">up </text>
-<circle cx="442" cy="206.6153846153846" r="6.16" fill="#fbc02d" stroke="none"/>
-<text x="442" y="210.6153846153846" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">7</text>
-<text x="442" y="232" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">the </text>
-<circle cx="486" cy="199.84615384615384" r="6.16" fill="#43a047" stroke="none"/>
-<text x="486" y="203.84615384615384" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">8</text>
-<text x="486" y="232" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">wa-</text>
-<circle cx="530" cy="193.0769230769231" r="6.16" fill="#2e7d32" stroke="none"/>
-<text x="530" y="197.0769230769231" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">9</text>
-<text x="530" y="232" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">ter </text>
-<circle cx="574" cy="206.6153846153846" r="6.16" fill="#fbc02d" stroke="none"/>
-<text x="574" y="210.6153846153846" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">7</text>
-<text x="574" y="232" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">spout.</text>
-<line x1="70" y1="266" x2="662" y2="266" stroke="#444" stroke-width="1"/>
-<line x1="70" y1="277" x2="662" y2="277" stroke="#444" stroke-width="1"/>
-<line x1="70" y1="288" x2="662" y2="288" stroke="#444" stroke-width="1"/>
-<line x1="70" y1="299" x2="662" y2="299" stroke="#444" stroke-width="1"/>
-<line x1="70" y1="310" x2="662" y2="310" stroke="#444" stroke-width="1"/>
-<text x="62" y="307.25" font-size="55" font-family="FreeSerif, DejaVu Serif, Times New Roman, serif" text-anchor="middle" fill="#222">&#x1D11E;</text>
-<circle cx="90" cy="293.0769230769231" r="6.16" fill="#2e7d32" stroke="none"/>
-<text x="90" y="297.0769230769231" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">9</text>
-<text x="90" y="332" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">Down </text>
-<circle cx="134" cy="293.0769230769231" r="6.16" fill="#2e7d32" stroke="none"/>
-<text x="134" y="297.0769230769231" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">9</text>
-<text x="134" y="332" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">came </text>
-<circle cx="178" cy="289.6923076923077" r="6.16" fill="#222" stroke="none"/>
-<text x="178" y="293.6923076923077" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">7</text>
-<text x="178" y="332" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">the </text>
-<circle cx="222" cy="282.9230769230769" r="6.16" fill="#81d4fa" stroke="none"/>
-<text x="222" y="286.9230769230769" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">11</text>
-<text x="222" y="332" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">rain </text>
-<circle cx="266" cy="282.9230769230769" r="6.16" fill="#81d4fa" stroke="none"/>
-<text x="266" y="286.9230769230769" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">11</text>
-<text x="266" y="332" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">and </text>
-<circle cx="310" cy="289.6923076923077" r="6.16" fill="#222" stroke="none"/>
-<text x="310" y="293.6923076923077" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">7</text>
-<text x="310" y="332" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">washed </text>
-<circle cx="354" cy="293.0769230769231" r="6.16" fill="#2e7d32" stroke="none"/>
-<text x="354" y="297.0769230769231" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">9</text>
-<text x="354" y="332" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">the </text>
-<circle cx="398" cy="289.6923076923077" r="6.16" fill="#222" stroke="none"/>
-<text x="398" y="293.6923076923077" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">7</text>
-<text x="398" y="332" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">spi-</text>
-<circle cx="442" cy="282.9230769230769" r="6.16" fill="#81d4fa" stroke="none"/>
-<text x="442" y="286.9230769230769" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">11</text>
-<text x="442" y="332" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">der </text>
-<circle cx="486" cy="293.0769230769231" r="6.16" fill="#2e7d32" stroke="none"/>
-<text x="486" y="297.0769230769231" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">9</text>
-<text x="486" y="332" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">out.</text>
-<line x1="70" y1="366" x2="662" y2="366" stroke="#444" stroke-width="1"/>
-<line x1="70" y1="377" x2="662" y2="377" stroke="#444" stroke-width="1"/>
-<line x1="70" y1="388" x2="662" y2="388" stroke="#444" stroke-width="1"/>
-<line x1="70" y1="399" x2="662" y2="399" stroke="#444" stroke-width="1"/>
-<line x1="70" y1="410" x2="662" y2="410" stroke="#444" stroke-width="1"/>
-<text x="62" y="407.25" font-size="55" font-family="FreeSerif, DejaVu Serif, Times New Roman, serif" text-anchor="middle" fill="#222">&#x1D11E;</text>
-<circle cx="90" cy="376.15384615384613" r="6.16" fill="#42a5f5" stroke="none"/>
-<text x="90" y="380.15384615384613" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">12</text>
-<text x="90" y="432" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">Out </text>
-<circle cx="134" cy="376.15384615384613" r="6.16" fill="#42a5f5" stroke="none"/>
-<text x="134" y="380.15384615384613" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">12</text>
-<text x="134" y="432" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">came </text>
-<circle cx="178" cy="376.15384615384613" r="6.16" fill="#42a5f5" stroke="none"/>
-<text x="178" y="380.15384615384613" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">12</text>
-<text x="178" y="432" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">the </text>
-<circle cx="222" cy="382.9230769230769" r="6.16" fill="#81d4fa" stroke="none"/>
-<text x="222" y="386.9230769230769" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">11</text>
-<text x="222" y="432" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">sun-</text>
-<circle cx="266" cy="393.0769230769231" r="6.16" fill="#2e7d32" stroke="none"/>
-<text x="266" y="397.0769230769231" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">9</text>
-<text x="266" y="432" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">shine </text>
-<circle cx="310" cy="393.0769230769231" r="6.16" fill="#2e7d32" stroke="none"/>
-<text x="310" y="397.0769230769231" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">9</text>
-<text x="310" y="432" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">and </text>
-<circle cx="354" cy="389.6923076923077" r="6.16" fill="#222" stroke="none"/>
-<text x="354" y="393.6923076923077" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">7</text>
-<text x="354" y="432" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">dried </text>
-<circle cx="398" cy="393.0769230769231" r="6.16" fill="#2e7d32" stroke="none"/>
-<text x="398" y="397.0769230769231" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">9</text>
-<text x="398" y="432" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">up </text>
-<circle cx="442" cy="389.6923076923077" r="6.16" fill="#222" stroke="none"/>
-<text x="442" y="393.6923076923077" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">7</text>
-<text x="442" y="432" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">all </text>
-<circle cx="486" cy="382.9230769230769" r="6.16" fill="#81d4fa" stroke="none"/>
-<text x="486" y="386.9230769230769" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">11</text>
-<text x="486" y="432" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">the </text>
-<circle cx="530" cy="393.0769230769231" r="6.16" fill="#2e7d32" stroke="none"/>
-<text x="530" y="397.0769230769231" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">9</text>
-<text x="530" y="432" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">rain.</text>
-<line x1="70" y1="466" x2="662" y2="466" stroke="#444" stroke-width="1"/>
-<line x1="70" y1="477" x2="662" y2="477" stroke="#444" stroke-width="1"/>
-<line x1="70" y1="488" x2="662" y2="488" stroke="#444" stroke-width="1"/>
-<line x1="70" y1="499" x2="662" y2="499" stroke="#444" stroke-width="1"/>
-<line x1="70" y1="510" x2="662" y2="510" stroke="#444" stroke-width="1"/>
-<text x="62" y="507.25" font-size="55" font-family="FreeSerif, DejaVu Serif, Times New Roman, serif" text-anchor="middle" fill="#222">&#x1D11E;</text>
-<line x1="76.448" y1="521.0" x2="103.552" y2="521.0" stroke="#444" stroke-width="1"/>
-<line x1="76.448" y1="532.0" x2="103.552" y2="532.0" stroke="#444" stroke-width="1"/>
-<circle cx="90" cy="523.5384615384615" r="6.16" fill="#d81b60" stroke="none"/>
-<text x="90" y="527.5384615384615" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">4</text>
-<text x="90" y="532" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">Then </text>
-<circle cx="134" cy="506.61538461538464" r="6.16" fill="#fbc02d" stroke="none"/>
-<text x="134" y="510.61538461538464" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">7</text>
-<text x="134" y="532" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">in-</text>
-<circle cx="178" cy="506.61538461538464" r="6.16" fill="#fbc02d" stroke="none"/>
-<text x="178" y="510.61538461538464" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">7</text>
-<text x="178" y="532" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">cy </text>
-<circle cx="222" cy="506.61538461538464" r="6.16" fill="#fbc02d" stroke="none"/>
-<text x="222" y="510.61538461538464" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">7</text>
-<text x="222" y="532" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">win-</text>
-<circle cx="266" cy="499.8461538461538" r="6.16" fill="#43a047" stroke="none"/>
-<text x="266" y="503.8461538461538" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">8</text>
-<text x="266" y="532" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">cy </text>
-<circle cx="310" cy="493.0769230769231" r="6.16" fill="#2e7d32" stroke="none"/>
-<text x="310" y="497.0769230769231" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">9</text>
-<text x="310" y="532" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">spi-</text>
-<circle cx="354" cy="493.0769230769231" r="6.16" fill="#2e7d32" stroke="none"/>
-<text x="354" y="497.0769230769231" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">9</text>
-<text x="354" y="532" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">der </text>
-<circle cx="398" cy="506.61538461538464" r="6.16" fill="#fbc02d" stroke="none"/>
-<text x="398" y="510.61538461538464" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">7</text>
-<text x="398" y="532" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">climbed </text>
-<circle cx="442" cy="499.8461538461538" r="6.16" fill="#43a047" stroke="none"/>
-<text x="442" y="503.8461538461538" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">8</text>
-<text x="442" y="532" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">up </text>
-<circle cx="486" cy="506.61538461538464" r="6.16" fill="#fbc02d" stroke="none"/>
-<text x="486" y="510.61538461538464" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">7</text>
-<text x="486" y="532" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">the </text>
-<circle cx="530" cy="499.8461538461538" r="6.16" fill="#43a047" stroke="none"/>
-<text x="530" y="503.8461538461538" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">8</text>
-<text x="530" y="532" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">spout </text>
-<circle cx="574" cy="493.0769230769231" r="6.16" fill="#2e7d32" stroke="none"/>
-<text x="574" y="497.0769230769231" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">9</text>
-<text x="574" y="532" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">a-</text>
-<circle cx="618" cy="506.61538461538464" r="6.16" fill="#fbc02d" stroke="none"/>
-<text x="618" y="510.61538461538464" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">7</text>
-<text x="618" y="532" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">gain.</text>
+<circle cx="90" cy="204.5" r="8.58" fill="#fbc02d" stroke="none"/>
+<text x="90" y="208.5" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">7</text>
+<text x="90" y="231.08" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">In-</text>
+<circle cx="134" cy="204.5" r="8.58" fill="#fbc02d" stroke="none"/>
+<text x="134" y="208.5" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">7</text>
+<text x="134" y="231.08" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">cy </text>
+<circle cx="178" cy="204.5" r="8.58" fill="#fbc02d" stroke="none"/>
+<text x="178" y="208.5" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">7</text>
+<text x="178" y="231.08" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">win-</text>
+<circle cx="222" cy="193.5" r="8.58" fill="#43a047" stroke="none"/>
+<text x="222" y="197.5" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">8</text>
+<text x="222" y="231.08" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">cy </text>
+<circle cx="266" cy="182.5" r="8.58" fill="#2e7d32" stroke="none"/>
+<text x="266" y="186.5" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">9</text>
+<text x="266" y="231.08" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">spi-</text>
+<circle cx="310" cy="182.5" r="8.58" fill="#2e7d32" stroke="none"/>
+<text x="310" y="186.5" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">9</text>
+<text x="310" y="231.08" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">der </text>
+<circle cx="354" cy="204.5" r="8.58" fill="#fbc02d" stroke="none"/>
+<text x="354" y="208.5" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">7</text>
+<text x="354" y="231.08" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">climbed </text>
+<circle cx="398" cy="193.5" r="8.58" fill="#43a047" stroke="none"/>
+<text x="398" y="197.5" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">8</text>
+<text x="398" y="231.08" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">up </text>
+<circle cx="442" cy="204.5" r="8.58" fill="#fbc02d" stroke="none"/>
+<text x="442" y="208.5" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">7</text>
+<text x="442" y="231.08" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">the </text>
+<circle cx="486" cy="193.5" r="8.58" fill="#43a047" stroke="none"/>
+<text x="486" y="197.5" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">8</text>
+<text x="486" y="231.08" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">wa-</text>
+<circle cx="530" cy="182.5" r="8.58" fill="#2e7d32" stroke="none"/>
+<text x="530" y="186.5" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">9</text>
+<text x="530" y="231.08" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">ter </text>
+<circle cx="574" cy="204.5" r="8.58" fill="#fbc02d" stroke="none"/>
+<text x="574" y="208.5" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">7</text>
+<text x="574" y="231.08" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">spout.</text>
+<line x1="50" y1="277.08000000000004" x2="662" y2="277.08000000000004" stroke="#444" stroke-width="1"/>
+<line x1="50" y1="288.08000000000004" x2="662" y2="288.08000000000004" stroke="#444" stroke-width="1"/>
+<line x1="50" y1="299.08000000000004" x2="662" y2="299.08000000000004" stroke="#444" stroke-width="1"/>
+<line x1="50" y1="310.08000000000004" x2="662" y2="310.08000000000004" stroke="#444" stroke-width="1"/>
+<line x1="50" y1="321.08000000000004" x2="662" y2="321.08000000000004" stroke="#444" stroke-width="1"/>
+<line x1="50" y1="277.08000000000004" x2="50" y2="321.08000000000004" stroke="#444" stroke-width="1"/>
+<line x1="662" y1="277.08000000000004" x2="662" y2="321.08000000000004" stroke="#444" stroke-width="1"/>
+<text x="62" y="318.33000000000004" font-size="55" font-family="FreeSerif, DejaVu Serif, Times New Roman, serif" text-anchor="middle" fill="#222">&#x1D11E;</text>
+<circle cx="90" cy="293.58000000000004" r="8.58" fill="#2e7d32" stroke="none"/>
+<text x="90" y="297.58000000000004" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">9</text>
+<text x="90" y="339.08000000000004" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">Down </text>
+<circle cx="134" cy="293.58000000000004" r="8.58" fill="#2e7d32" stroke="none"/>
+<text x="134" y="297.58000000000004" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">9</text>
+<text x="134" y="339.08000000000004" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">came </text>
+<circle cx="178" cy="288.08000000000004" r="8.58" fill="#222" stroke="none"/>
+<text x="178" y="292.08000000000004" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">7</text>
+<text x="178" y="339.08000000000004" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">the </text>
+<circle cx="222" cy="277.08000000000004" r="8.58" fill="#81d4fa" stroke="none"/>
+<text x="222" y="281.08000000000004" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">11</text>
+<text x="222" y="339.08000000000004" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">rain </text>
+<circle cx="266" cy="277.08000000000004" r="8.58" fill="#81d4fa" stroke="none"/>
+<text x="266" y="281.08000000000004" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">11</text>
+<text x="266" y="339.08000000000004" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">and </text>
+<circle cx="310" cy="288.08000000000004" r="8.58" fill="#222" stroke="none"/>
+<text x="310" y="292.08000000000004" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">7</text>
+<text x="310" y="339.08000000000004" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">washed </text>
+<circle cx="354" cy="293.58000000000004" r="8.58" fill="#2e7d32" stroke="none"/>
+<text x="354" y="297.58000000000004" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">9</text>
+<text x="354" y="339.08000000000004" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">the </text>
+<circle cx="398" cy="288.08000000000004" r="8.58" fill="#222" stroke="none"/>
+<text x="398" y="292.08000000000004" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">7</text>
+<text x="398" y="339.08000000000004" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">spi-</text>
+<circle cx="442" cy="277.08000000000004" r="8.58" fill="#81d4fa" stroke="none"/>
+<text x="442" y="281.08000000000004" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">11</text>
+<text x="442" y="339.08000000000004" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">der </text>
+<circle cx="486" cy="293.58000000000004" r="8.58" fill="#2e7d32" stroke="none"/>
+<text x="486" y="297.58000000000004" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">9</text>
+<text x="486" y="339.08000000000004" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">out.</text>
+<line x1="50" y1="385.08000000000004" x2="662" y2="385.08000000000004" stroke="#444" stroke-width="1"/>
+<line x1="50" y1="396.08000000000004" x2="662" y2="396.08000000000004" stroke="#444" stroke-width="1"/>
+<line x1="50" y1="407.08000000000004" x2="662" y2="407.08000000000004" stroke="#444" stroke-width="1"/>
+<line x1="50" y1="418.08000000000004" x2="662" y2="418.08000000000004" stroke="#444" stroke-width="1"/>
+<line x1="50" y1="429.08000000000004" x2="662" y2="429.08000000000004" stroke="#444" stroke-width="1"/>
+<line x1="50" y1="385.08000000000004" x2="50" y2="429.08000000000004" stroke="#444" stroke-width="1"/>
+<line x1="662" y1="385.08000000000004" x2="662" y2="429.08000000000004" stroke="#444" stroke-width="1"/>
+<text x="62" y="426.33000000000004" font-size="55" font-family="FreeSerif, DejaVu Serif, Times New Roman, serif" text-anchor="middle" fill="#222">&#x1D11E;</text>
+<line x1="71.124" y1="374.08000000000004" x2="108.876" y2="374.08000000000004" stroke="#444" stroke-width="1"/>
+<circle cx="90" cy="374.08000000000004" r="8.58" fill="#42a5f5" stroke="none"/>
+<text x="90" y="378.08000000000004" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">12</text>
+<text x="90" y="447.08000000000004" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">Out </text>
+<line x1="115.124" y1="374.08000000000004" x2="152.876" y2="374.08000000000004" stroke="#444" stroke-width="1"/>
+<circle cx="134" cy="374.08000000000004" r="8.58" fill="#42a5f5" stroke="none"/>
+<text x="134" y="378.08000000000004" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">12</text>
+<text x="134" y="447.08000000000004" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">came </text>
+<line x1="159.124" y1="374.08000000000004" x2="196.876" y2="374.08000000000004" stroke="#444" stroke-width="1"/>
+<circle cx="178" cy="374.08000000000004" r="8.58" fill="#42a5f5" stroke="none"/>
+<text x="178" y="378.08000000000004" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">12</text>
+<text x="178" y="447.08000000000004" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">the </text>
+<circle cx="222" cy="385.08000000000004" r="8.58" fill="#81d4fa" stroke="none"/>
+<text x="222" y="389.08000000000004" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">11</text>
+<text x="222" y="447.08000000000004" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">sun-</text>
+<circle cx="266" cy="401.58000000000004" r="8.58" fill="#2e7d32" stroke="none"/>
+<text x="266" y="405.58000000000004" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">9</text>
+<text x="266" y="447.08000000000004" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">shine </text>
+<circle cx="310" cy="401.58000000000004" r="8.58" fill="#2e7d32" stroke="none"/>
+<text x="310" y="405.58000000000004" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">9</text>
+<text x="310" y="447.08000000000004" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">and </text>
+<circle cx="354" cy="396.08000000000004" r="8.58" fill="#222" stroke="none"/>
+<text x="354" y="400.08000000000004" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">7</text>
+<text x="354" y="447.08000000000004" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">dried </text>
+<circle cx="398" cy="401.58000000000004" r="8.58" fill="#2e7d32" stroke="none"/>
+<text x="398" y="405.58000000000004" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">9</text>
+<text x="398" y="447.08000000000004" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">up </text>
+<circle cx="442" cy="396.08000000000004" r="8.58" fill="#222" stroke="none"/>
+<text x="442" y="400.08000000000004" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">7</text>
+<text x="442" y="447.08000000000004" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">all </text>
+<circle cx="486" cy="385.08000000000004" r="8.58" fill="#81d4fa" stroke="none"/>
+<text x="486" y="389.08000000000004" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">11</text>
+<text x="486" y="447.08000000000004" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">the </text>
+<circle cx="530" cy="401.58000000000004" r="8.58" fill="#2e7d32" stroke="none"/>
+<text x="530" y="405.58000000000004" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">9</text>
+<text x="530" y="447.08000000000004" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">rain.</text>
+<line x1="50" y1="493.08000000000004" x2="662" y2="493.08000000000004" stroke="#444" stroke-width="1"/>
+<line x1="50" y1="504.08000000000004" x2="662" y2="504.08000000000004" stroke="#444" stroke-width="1"/>
+<line x1="50" y1="515.08" x2="662" y2="515.08" stroke="#444" stroke-width="1"/>
+<line x1="50" y1="526.08" x2="662" y2="526.08" stroke="#444" stroke-width="1"/>
+<line x1="50" y1="537.08" x2="662" y2="537.08" stroke="#444" stroke-width="1"/>
+<line x1="50" y1="493.08000000000004" x2="50" y2="537.08" stroke="#444" stroke-width="1"/>
+<line x1="662" y1="493.08000000000004" x2="662" y2="537.08" stroke="#444" stroke-width="1"/>
+<text x="62" y="534.33" font-size="55" font-family="FreeSerif, DejaVu Serif, Times New Roman, serif" text-anchor="middle" fill="#222">&#x1D11E;</text>
+<line x1="71.124" y1="548.08" x2="108.876" y2="548.08" stroke="#444" stroke-width="1"/>
+<line x1="71.124" y1="559.08" x2="108.876" y2="559.08" stroke="#444" stroke-width="1"/>
+<circle cx="90" cy="559.08" r="8.58" fill="#d81b60" stroke="none"/>
+<text x="90" y="563.08" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">4</text>
+<text x="90" y="585.6600000000001" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">Then </text>
+<circle cx="134" cy="531.58" r="8.58" fill="#fbc02d" stroke="none"/>
+<text x="134" y="535.58" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">7</text>
+<text x="134" y="585.6600000000001" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">in-</text>
+<circle cx="178" cy="531.58" r="8.58" fill="#fbc02d" stroke="none"/>
+<text x="178" y="535.58" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">7</text>
+<text x="178" y="585.6600000000001" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">cy </text>
+<circle cx="222" cy="531.58" r="8.58" fill="#fbc02d" stroke="none"/>
+<text x="222" y="535.58" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">7</text>
+<text x="222" y="585.6600000000001" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">win-</text>
+<circle cx="266" cy="520.58" r="8.58" fill="#43a047" stroke="none"/>
+<text x="266" y="524.58" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">8</text>
+<text x="266" y="585.6600000000001" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">cy </text>
+<circle cx="310" cy="509.58000000000004" r="8.58" fill="#2e7d32" stroke="none"/>
+<text x="310" y="513.58" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">9</text>
+<text x="310" y="585.6600000000001" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">spi-</text>
+<circle cx="354" cy="509.58000000000004" r="8.58" fill="#2e7d32" stroke="none"/>
+<text x="354" y="513.58" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">9</text>
+<text x="354" y="585.6600000000001" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">der </text>
+<circle cx="398" cy="531.58" r="8.58" fill="#fbc02d" stroke="none"/>
+<text x="398" y="535.58" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">7</text>
+<text x="398" y="585.6600000000001" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">climbed </text>
+<circle cx="442" cy="520.58" r="8.58" fill="#43a047" stroke="none"/>
+<text x="442" y="524.58" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">8</text>
+<text x="442" y="585.6600000000001" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">up </text>
+<circle cx="486" cy="531.58" r="8.58" fill="#fbc02d" stroke="none"/>
+<text x="486" y="535.58" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">7</text>
+<text x="486" y="585.6600000000001" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">the </text>
+<circle cx="530" cy="520.58" r="8.58" fill="#43a047" stroke="none"/>
+<text x="530" y="524.58" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">8</text>
+<text x="530" y="585.6600000000001" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">spout </text>
+<circle cx="574" cy="509.58000000000004" r="8.58" fill="#2e7d32" stroke="none"/>
+<text x="574" y="513.58" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">9</text>
+<text x="574" y="585.6600000000001" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">a-</text>
+<circle cx="618" cy="531.58" r="8.58" fill="#fbc02d" stroke="none"/>
+<text x="618" y="535.58" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">7</text>
+<text x="618" y="585.6600000000001" font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" fill="#222">gain.</text>
 </svg>

@@ -59,33 +59,33 @@ When generating or correcting music, use this order to choose the right token fo
 
 ### Mapping to note names (e.g. C4, D4)
 
-If you assume the **first white key (1)** is **C4**, then each token maps to a note as follows (low to high, same order as the pitch list above):
+On the physical piano, **key 4** is the white key immediately to the left of two black keys, so **4 = C** (middle C = C4). The full chromatic mapping (low to high) is:
 
-- 1 = C4
-- 1* = C♯4
-- 2 = D4
-- 2* = D♯4
-- 3 = E4
-- 4 = F4
-- 3* = F♯4
-- 5 = G4
-- 4* = G♯4
-- 6 = A4
-- 7 = B4
-- 5* = A♯4 (between 6 and 7)
-- 8 = C5
-- 6* = C♯5
-- 9 = D5
-- 7* = D♯5 (between 9 and 10)
-- 10 = E5
-- 11 = F5
-- 8* = F♯5
-- 12 = G5
-- 9* = G♯5
-- 13 = A5
-- 14 = B5
+- 1 = G3
+- 1* = G♯3
+- 2 = A3
+- 2* = A♯3
+- 3 = B3
+- 4 = C4
+- 3* = C♯4
+- 5 = D4
+- 4* = D♯4
+- 6 = E4
+- 7 = F4
+- 5* = F♯4
+- 8 = G4
+- 6* = G♯4
+- 9 = A4
+- 7* = A♯4 (between 9 and 10)
+- 10 = B4
+- 11 = C5
+- 8* = C♯5
+- 12 = D5
+- 9* = D♯5
+- 13 = E5
+- 14 = F5
 
-Transpose as needed if the instrument starts on a different note.
+Transpose as needed if your instrument is tuned to a different reference.
 
 ### Regex for tokens
 
@@ -99,11 +99,11 @@ So the full token pattern is: `0` or `(?:1[0-4]|[1-9])\*?`.
 
 ### Examples
 
-**Minimal file (one line, no comments):**
+**Minimal file (one line, no comments; C major scale 4–11 = C–C):**
 
 ```
 My Song
-1Do 2Re 3Mi 4Fa 5Sol 6La 7Ti 8Do
+4Do 5Re 6Mi 7Fa 8Sol 9La 10Ti 11Do
 ```
 
 **With comments and rests:**

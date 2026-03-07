@@ -43,6 +43,8 @@ PITCH_INDEX_TOP = 22     # 14 = top line
 
 LEFT_MARGIN = 90
 RIGHT_MARGIN = 24  # content can sit close to the right edge
+# Staff horizontal extent: extend left to the treble clef (clef is at LEFT_MARGIN - 28)
+STAFF_LEFT = LEFT_MARGIN - 40
 TOP_MARGIN = 40
 TITLE_GAP = 20
 COMMENT_LINE_HEIGHT = 20
@@ -50,10 +52,14 @@ STAFF_TOP = 20
 STAFF_GAP = 11  # vertical spacing between staff lines (larger = bigger staff and notes)
 LINE_HEIGHT = 100  # vertical space per system (smaller = less gap between lines of music)
 NOTE_SPACING = 44
-# Note circle only just larger than spacing between two adjacent staff lines
-NOTE_RADIUS = STAFF_GAP * 0.56  # diameter ~1.12 * STAFF_GAP
-# Lyrics sit just below the staff
-LYRIC_Y = STAFF_TOP + 4 * STAFF_GAP + 22
+# Note circle: large enough to fully contain the number; radius independent of digit size
+NOTE_RADIUS = STAFF_GAP * 0.78
+# Fixed digit size so circles can be bigger without numbers overflowing
+NOTE_DIGIT_SIZE = 13
+# Lyrics sit just below the staff (or below lowest note/ledger if lower)
+LYRIC_CLEARANCE = 18  # gap between lowest note/ledger and lyric baseline
+LYRIC_LINE_HEIGHT = 14
+GAP_AFTER_LYRIC = 12
 
 # Treble clef: path designed for viewBox "0 0 12 40", height 40 units;
 # we scale so 8 units = one staff space (STAFF_GAP). Center of spiral on 2nd line.
@@ -78,18 +84,29 @@ def staff_y(y0: float, position: float) -> float:
     return y0 + STAFF_TOP + position * STAFF_GAP
 
 
+def _staff_position(pitch_index: int) -> float:
+    """Staff position (0=top line, 4=bottom line) in half-steps. Note centers sit on lines (integer) or in spaces (half-integer)."""
+    if pitch_index >= 9 and pitch_index <= 17:
+        # On staff: 9 keys map to positions 4, 3.5, 3, 2.5, 2, 1.5, 1, 0.5, 0
+        return 4 - (pitch_index - 9) * 0.5
+    if pitch_index >= 18:
+        # Above staff (ledger lines)
+        return -(pitch_index - 17) * 0.5
+    # Below staff (ledger lines)
+    return 4 + (9 - pitch_index) * 0.5
+
+
 def note_cy(y0: float, number: int, is_black: bool) -> float:
-    """Y coordinate for center of note circle. Uses pitch order (e.g. 7* between 9 and 10)."""
+    """Y coordinate for center of note circle. Uses pitch order; centers align with staff lines or spaces."""
     idx = _pitch_index(number, is_black)
-    # position 4 = bottom (index 9), position 0 = top (index 22)
-    position = 4 - (idx - PITCH_INDEX_BOTTOM) * (4 / (PITCH_INDEX_TOP - PITCH_INDEX_BOTTOM))
+    position = _staff_position(idx)
     return staff_y(y0, position)
 
 
 def note_position(number: int, is_black: bool) -> float:
-    """Staff position (0=top, 4=bottom). For ledger line logic: >4 = below staff."""
+    """Staff position (0=top, 4=bottom). For ledger line logic: >4 = below staff, <0 = above."""
     idx = _pitch_index(number, is_black)
-    return 4 - (idx - PITCH_INDEX_BOTTOM) * (4 / (PITCH_INDEX_TOP - PITCH_INDEX_BOTTOM))
+    return _staff_position(idx)
 
 
 @dataclass
@@ -183,11 +200,48 @@ def estimate_width(lines: list[list[Event]]) -> int:
     return LEFT_MARGIN + max_events * NOTE_SPACING + RIGHT_MARGIN
 
 
+def _content_bottom(y0: float, line: list[Event]) -> float:
+    """Lowest y (bottom of notes/ledgers) for this system so lyrics can sit below."""
+    bottom = y0 + STAFF_TOP + 4 * STAFF_GAP
+    for event in line:
+        if event.kind == "rest":
+            continue
+        assert event.number is not None
+        cy = note_cy(y0, event.number, event.kind == "black")
+        pos = note_position(event.number, event.kind == "black")
+        bottom = max(bottom, cy + NOTE_RADIUS)
+        if pos > 4:
+            for k in range(5, math.ceil(pos) + 1):
+                bottom = max(bottom, staff_y(y0, float(k)) + 2)
+    return bottom
+
+
+def _compute_line_layout(song: Song, music_top: float) -> tuple[list[float], list[float]]:
+    """Compute y0 and lyric baseline for each system (variable height when lines have low notes)."""
+    line_y0s: list[float] = []
+    line_lyric_baselines: list[float] = []
+    y0 = music_top
+    for line in song.lines:
+        line_y0s.append(y0)
+        content_bottom = _content_bottom(y0, line)
+        lyric_baseline = content_bottom + LYRIC_CLEARANCE
+        line_lyric_baselines.append(lyric_baseline)
+        # Minimum system height so lines without low notes still have comfortable spacing
+        system_height = max(
+            LINE_HEIGHT,
+            lyric_baseline - y0 + LYRIC_LINE_HEIGHT + GAP_AFTER_LYRIC,
+        )
+        y0 += system_height
+    return line_y0s, line_lyric_baselines
+
+
 def render_song(song: Song) -> str:
     width = estimate_width(song.lines)
     comments_height = len(song.comments) * COMMENT_LINE_HEIGHT
     music_top = TOP_MARGIN + 36 + TITLE_GAP + comments_height + 10
-    height = music_top + len(song.lines) * LINE_HEIGHT + 30
+    line_y0s, line_lyric_baselines = _compute_line_layout(song, music_top)
+    total_music_height = line_lyric_baselines[-1] + LYRIC_LINE_HEIGHT + GAP_AFTER_LYRIC - music_top
+    height = music_top + total_music_height + 30
 
     out: list[str] = []
     out.append(f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}">')
@@ -204,15 +258,28 @@ def render_song(song: Song) -> str:
 
     # Music lines
     for line_index, line in enumerate(song.lines):
-        y0 = music_top + line_index * LINE_HEIGHT
+        y0 = line_y0s[line_index]
+        lyric_baseline = line_lyric_baselines[line_index]
+        staff_right = width - RIGHT_MARGIN
+        staff_top_y = y0 + STAFF_TOP
+        staff_bottom_y = y0 + STAFF_TOP + 4 * STAFF_GAP
 
-        # staff lines
+        # Staff: 5 horizontal lines extending to left edge of treble clef and to right margin
         for i in range(5):
-            y = y0 + STAFF_TOP + i * STAFF_GAP
+            y = staff_top_y + i * STAFF_GAP
             out.append(
-                f'<line x1="{LEFT_MARGIN - 20}" y1="{y}" x2="{width - RIGHT_MARGIN}" y2="{y}" '
+                f'<line x1="{STAFF_LEFT}" y1="{y}" x2="{staff_right}" y2="{y}" '
                 f'stroke="#444" stroke-width="1"/>'
             )
+        # Vertical lines at left and right edges of the staff
+        out.append(
+            f'<line x1="{STAFF_LEFT}" y1="{staff_top_y}" x2="{STAFF_LEFT}" y2="{staff_bottom_y}" '
+            f'stroke="#444" stroke-width="1"/>'
+        )
+        out.append(
+            f'<line x1="{staff_right}" y1="{staff_top_y}" x2="{staff_right}" y2="{staff_bottom_y}" '
+            f'stroke="#444" stroke-width="1"/>'
+        )
 
         # Treble clef (Unicode U+1D11E) scaled to span ~4 staff spaces, aligned so G is on 2nd line
         clef_x = LEFT_MARGIN - 28
@@ -232,7 +299,7 @@ def render_song(song: Song) -> str:
                 rest_y = y0 + STAFF_TOP + 2 * STAFF_GAP
                 out.append(svg_text(cx, rest_y, "·", size=int(14 + STAFF_GAP * 1.5), anchor="middle", fill="#888"))
                 if event.lyric:
-                    out.append(svg_text(cx, y0 + LYRIC_Y, event.lyric, size=14, anchor="middle"))
+                    out.append(svg_text(cx, lyric_baseline, event.lyric, size=14, anchor="middle"))
                 x += NOTE_SPACING
                 continue
 
@@ -240,9 +307,19 @@ def render_song(song: Song) -> str:
             cy = note_cy(y0, event.number, event.kind == "black")
             pos = note_position(event.number, event.kind == "black")
 
-            # Ledger lines for notes below the staff (numbers 1–4)
+            # Ledger lines for notes below the staff (position > 4)
             if pos > 4:
                 for k in range(5, math.ceil(pos) + 1):
+                    led_y = staff_y(y0, float(k))
+                    led_x1 = cx - NOTE_RADIUS * 2.2
+                    led_x2 = cx + NOTE_RADIUS * 2.2
+                    out.append(
+                        f'<line x1="{led_x1}" y1="{led_y}" x2="{led_x2}" y2="{led_y}" '
+                        f'stroke="#444" stroke-width="1"/>'
+                    )
+            # Ledger lines for notes above the staff (position < 0)
+            if pos < 0:
+                for k in range(math.ceil(pos), 0):
                     led_y = staff_y(y0, float(k))
                     led_x1 = cx - NOTE_RADIUS * 2.2
                     led_x2 = cx + NOTE_RADIUS * 2.2
@@ -259,10 +336,10 @@ def render_song(song: Song) -> str:
                 text_fill = "#fff"
 
             out.append(f'<circle cx="{cx}" cy="{cy}" r="{NOTE_RADIUS}" fill="{fill}" stroke="none"/>')
-            out.append(svg_text(cx, cy + 4, str(event.number), size=max(10, int(NOTE_RADIUS * 2.2)), anchor="middle", weight="bold", fill=text_fill))
+            out.append(svg_text(cx, cy + 4, str(event.number), size=NOTE_DIGIT_SIZE, anchor="middle", weight="bold", fill=text_fill))
 
             if event.lyric:
-                out.append(svg_text(cx, y0 + LYRIC_Y, event.lyric, size=14, anchor="middle"))
+                out.append(svg_text(cx, lyric_baseline, event.lyric, size=14, anchor="middle"))
 
             x += NOTE_SPACING
 
