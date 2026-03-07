@@ -35,7 +35,8 @@ NOTE_SEMITONE = {
 
 def _parse_note_chunk(chunk: str, default_octave: int) -> tuple[bool, int | None]:
     """Return (is_rest, semitone_c0 or None)."""
-    m = re.match(r"^(\d+)?([Pp]|[A-Ga-gH][#b]?)([4-7])?\.?$", chunk)
+    # Duration may include a trailing dot (dotted note, e.g. 8. = dotted eighth)
+    m = re.match(r"^(\d+\.?)?([Pp]|[A-Ga-gH][#b]?)([4-7])?\.?$", chunk)
     if not m:
         return (True, None)  # skip unparseable as rest
     _dur, note_part, oct_part = m.groups()
@@ -81,27 +82,27 @@ def rtttl_to_tokens(text: str) -> list[str]:
                     pass
                 break
 
-    # First pass: list of (is_rest, semitone_c0 or None)
-    events: list[tuple[bool, int | None]] = []
+    # First pass: list of (is_rest, semitone_c0 or None, chunk_text)
+    events: list[tuple[bool, int | None, str]] = []
     for chunk in tone_section.split(","):
         chunk = chunk.strip()
         if not chunk:
             continue
-        events.append(_parse_note_chunk(chunk, default_octave))
+        is_rest, semi = _parse_note_chunk(chunk, default_octave)
+        events.append((is_rest, semi, chunk))
 
     # Filter to notes only for range
-    semitones = [s for (rest, s) in events if not rest and s is not None]
-    if not semitones:
-        # All rests or unparseable: output one token per event
+    notes_with_chunks = [(s, c) for (rest, s, c) in events if not rest and s is not None]
+    if not notes_with_chunks:
         return ["0"] * len(events)
 
-    min_semi = min(semitones)
-    max_semi = max(semitones)
+    min_semi, min_chunk = min(notes_with_chunks, key=lambda x: x[0])
+    max_semi, max_chunk = max(notes_with_chunks, key=lambda x: x[0])
     span = max_semi - min_semi
     if span > MAX_SPAN:
         raise ValueError(
-            f"Melody span is {span} semitones (low {min_semi}, high {max_semi}); "
-            f"piano has only {PIANO_SEMITONES} semitones (max span {MAX_SPAN})"
+            f"Melody span is {span} semitones; piano has only {PIANO_SEMITONES} (max span {MAX_SPAN}). "
+            f"Lowest note: {min_chunk!r} ({min_semi}); highest note: {max_chunk!r} ({max_semi})"
         )
 
     # Transpose by whole octaves so [min_semi, max_semi] fits in [G3, F5]
@@ -121,7 +122,7 @@ def rtttl_to_tokens(text: str) -> list[str]:
 
     # Second pass: convert each event to token
     tokens: list[str] = []
-    for is_rest, semitone_c0 in events:
+    for is_rest, semitone_c0, _ in events:
         if is_rest or semitone_c0 is None:
             tokens.append("0")
             continue
