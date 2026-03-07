@@ -21,7 +21,31 @@ python3 render.py incy-wincy-spider.music incy-wincy-spider.svg
 
 ---
 
-## Input format (for music generation)
+## Converting from RTTTL
+
+The script **`rtttl_to_music.py`** converts [RTTTL](https://en.wikipedia.org/wiki/Ring_Tone_Text_Transfer_Language) (ringtone format) into a single line of toy-piano tokens. Use it to turn an RTTTL tune into numbers you can paste into a `.music` file.
+
+**Usage:**
+
+```bash
+python3 rtttl_to_music.py < tune.rtttl
+```
+
+- **Input:** RTTTL on stdin (e.g. `Name:d=4,o=5,b=120:c5,e5,g5,c6,...`).
+- **Output:** Space-separated tokens on stdout: `0` for rests, `1`–`14` and `1*`–`9*` for keys. No title, comments, or lyrics—only the note sequence.
+
+**Pitch mapping:** The script uses the same piano range as the rest of this project: **G3–F5** (key 1 = G3, key 4 = C4, key 14 = F5). RTTTL octaves 4–7 are supported.
+
+**Transposition:** The **entire melody** is transposed by whole octaves so that it fits on the piano. The script finds the lowest and highest note, then shifts the tune up or down by octaves until the whole range lies between G3 and F5. If the melody spans **more than 22 semitones**, it cannot fit on the 23-key piano; the script prints an error to stderr and exits with code 1.
+
+**Example (paste output into a .music file as one line):**
+
+```bash
+echo 'Simpsons:d=4,o=5,b=160:32p,c6,e6,f#6,8a6,g6' | python3 rtttl_to_music.py
+# → 0 4 6 5* 9 8  (then add title and use as one music line)
+```
+
+---
 
 Use this section when generating or correcting `.music` files so they work with this renderer. The instrument has **14 white keys** (numbers **1–14**) and **9 black keys** (numbers **1\*–9\***). The physical piano has no 10th black key, so there is **no 10\*** in this format.
 
