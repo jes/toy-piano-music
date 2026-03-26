@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """
 Read RTTTL from stdin, output toy-piano number tokens on stdout.
-Ignores title, defaults, line breaks, duration/lyrics — only note names and octaves.
+Ignores title, defaults, line breaks, duration/lyrics - only note names and octaves.
 P → 0, other notes → 1–14 or 1*–9* (black keys).
 
-The whole melody is transposed by octaves so it fits on the piano (G3–F5, 23 semitones).
+The whole melody is transposed to fit on the piano (G3-F5, 23 semitones).
+Prefer octave transposition; if impossible, use nearest semitone transposition.
 If the melody spans more than 22 semitones, exits with an error.
 """
 
@@ -105,20 +106,30 @@ def rtttl_to_tokens(text: str) -> list[str]:
             f"Lowest note: {min_chunk!r} ({min_semi}); highest note: {max_chunk!r} ({max_semi})"
         )
 
-    # Transpose by whole octaves so [min_semi, max_semi] fits in [G3, F5]
+    # Transpose so [min_semi, max_semi] fits in [G3, F5].
     # offset must satisfy: min_semi + offset >= 43, max_semi + offset <= 65
-    # So offset in [43 - min_semi, 65 - max_semi]. Use a multiple of 12.
+    # So offset in [43 - min_semi, 65 - max_semi].
     offset_lo = G3_SEMITONE - min_semi
     offset_hi = F5_SEMITONE - max_semi
+    if offset_lo > offset_hi:
+        raise ValueError(
+            f"Melody cannot fit on piano: need offset in [{offset_lo}, {offset_hi}]"
+        )
+
+    def _closest_to_zero(lo: int, hi: int) -> int:
+        if lo <= 0 <= hi:
+            return 0
+        return lo if abs(lo) <= abs(hi) else hi
+
+    # Prefer octave transposition when possible.
     k_lo = math.ceil(offset_lo / 12)
     k_hi = math.floor(offset_hi / 12)
-    if k_lo > k_hi:
-        raise ValueError(
-            f"Melody cannot fit on piano: need offset in [{offset_lo}, {offset_hi}], "
-            f"no multiple of 12 in range"
-        )
-    k = k_lo
-    offset = 12 * k
+    if k_lo <= k_hi:
+        octave_candidates = [12 * k_lo, 12 * k_hi]
+        offset = min(octave_candidates, key=abs)
+    else:
+        # Fall back to nearest semitone shift so out-of-range melodies can still be mapped.
+        offset = _closest_to_zero(offset_lo, offset_hi)
 
     # Second pass: convert each event to token
     tokens: list[str] = []
