@@ -36,11 +36,11 @@ NOTE_SEMITONE = {
 
 def _parse_note_chunk(chunk: str, default_octave: int) -> tuple[bool, int | None]:
     """Return (is_rest, semitone_c0 or None)."""
-    # Duration may include a trailing dot (dotted note, e.g. 8. = dotted eighth)
-    m = re.match(r"^(\d+\.?)?([Pp]|[A-Ga-gH][#b]?)([4-7])?\.?$", chunk)
+    # RTTTL dotted notes can place '.' after duration, after note, or after octave.
+    m = re.match(r"^(\d+\.?)?([Pp]|[A-Ga-gH][#b]?)(\.)?([4-7])?(\.)?$", chunk)
     if not m:
         return (True, None)  # skip unparseable as rest
-    _dur, note_part, oct_part = m.groups()
+    _dur, note_part, _dot_after_note, oct_part, _trailing_dot = m.groups()
     note_part = (note_part or "").strip().lower()
     octave = int(oct_part) if oct_part else default_octave
 
