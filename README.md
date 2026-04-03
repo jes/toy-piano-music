@@ -63,9 +63,9 @@ Use this section when generating or correcting `.music` files so they work with 
 
 Tokens are written **directly against** the following lyric text; there is no space between the token and the start of the lyric. Example: `7In-7cy` means note 7 with lyric “In-”, then note 7 with lyric “cy”.
 
-### Pitch order (critical for correct placement)
+### Pitch order (critical for choosing the right token)
 
-Notes are placed on the staff by **pitch order**, not by the white-key number alone. The ascending order of all 24 keys is:
+Melodies are encoded by **pitch**, not by white-key number alone: you must use the right token for each semitone. The ascending order of all 24 keys is:
 
 ```
 1  1*  2  2*  3  4  3*  5  4*  6  7  5*  8  6*  9  7*  10  11  8*  12  9*  13  14
@@ -80,6 +80,8 @@ So for example:
 - **9\*** is between 13 and 14.
 
 When generating or correcting music, use this order to choose the right token for each pitch.
+
+**Staff in SVG:** White keys use normal treble-clef steps (line or space): the bottom staff line is key **6** (E4), the top line is key **14** (F5), with ledger lines for keys **1–5** below. Black keys are drawn halfway between the staff heights of the two white keys they lie between chromatically (for example `5*` between keys 7 and 8).
 
 ### Mapping to note names (e.g. C4, D4)
 

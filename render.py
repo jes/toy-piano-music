@@ -30,16 +30,44 @@ WHITE_KEY_COLOURS = {
     14: "#8d6e63",  # brown
 }
 
-# Vertical positions: keys follow pitch order (see PITCH_ORDER).
-# Staff: bottom line = 6, top line = 14. Position 4 = bottom, 0 = top.
-# Black keys (e.g. 7*) use their pitch position, not the white-key number.
+# Reference pitch order (same as .music / rtttl_to_music); kept for docs cross-reference.
 PITCH_ORDER = [
     (1, False), (1, True), (2, False), (2, True), (3, False), (4, False), (3, True), (5, False), (4, True),
     (6, False), (7, False), (5, True), (8, False), (6, True), (9, False), (7, True), (10, False), (11, False),
     (8, True), (12, False), (9, True), (13, False), (14, False),
 ]
-PITCH_INDEX_BOTTOM = 9   # 6 = bottom line
-PITCH_INDEX_TOP = 22     # 14 = top line
+
+# Treble staff: y-position uses half-steps of the staff (integer = line, .5 = space).
+# Bottom line = white key 6 (E4); top line = white key 14 (F5). Ledger lines extend for keys 1–5.
+# Black keys sit midway between the staff positions of the two white keys they lie between chromatically.
+_WHITE_KEY_STAFF_POS: dict[int, float] = {
+    1: 6.5,
+    2: 6.0,
+    3: 5.5,
+    4: 5.0,
+    5: 4.5,
+    6: 4.0,
+    7: 3.5,
+    8: 3.0,
+    9: 2.5,
+    10: 2.0,
+    11: 1.5,
+    12: 1.0,
+    13: 0.5,
+    14: 0.0,
+}
+# n* lies between these white keys (see README pitch order).
+_BLACK_BETWEEN_WHITE: dict[int, tuple[int, int]] = {
+    1: (1, 2),
+    2: (2, 3),
+    3: (4, 5),
+    4: (5, 6),
+    5: (7, 8),
+    6: (8, 9),
+    7: (9, 10),
+    8: (11, 12),
+    9: (12, 13),
+}
 
 LEFT_MARGIN = 90
 RIGHT_MARGIN = 24  # content can sit close to the right edge
@@ -71,42 +99,30 @@ TREBLE_CLEF_WIDTH = 14  # units in same scale as path height 40
 TREBLE_CLEF_HEIGHT = 40
 
 
-def _pitch_index(number: int, is_black: bool) -> int:
-    """Index in PITCH_ORDER for this key (0 = lowest pitch)."""
-    for i, (n, black) in enumerate(PITCH_ORDER):
-        if n == number and black == is_black:
-            return i
-    raise ValueError(f"Unknown key: {number}{'*' if is_black else ''}")
-
-
 def staff_y(y0: float, position: float) -> float:
     """Y coordinate for a staff position. position 0 = top line, 4 = bottom line (half-steps)."""
     return y0 + STAFF_TOP + position * STAFF_GAP
 
 
-def _staff_position(pitch_index: int) -> float:
-    """Staff position (0=top line, 4=bottom line) in half-steps. Note centers sit on lines (integer) or in spaces (half-integer)."""
-    if pitch_index >= 9 and pitch_index <= 17:
-        # On staff: 9 keys map to positions 4, 3.5, 3, 2.5, 2, 1.5, 1, 0.5, 0
-        return 4 - (pitch_index - 9) * 0.5
-    if pitch_index >= 18:
-        # Above staff (ledger lines)
-        return -(pitch_index - 17) * 0.5
-    # Below staff (ledger lines)
-    return 4 + (9 - pitch_index) * 0.5
+def _staff_position(number: int, is_black: bool) -> float:
+    """Staff position: 0=top line (F5), 4=bottom line (E4); half-integers are spaces; >4 / <0 use ledgers."""
+    if is_black:
+        lo, hi = _BLACK_BETWEEN_WHITE[number]
+        a = _WHITE_KEY_STAFF_POS[lo]
+        b = _WHITE_KEY_STAFF_POS[hi]
+        return (a + b) / 2.0
+    return _WHITE_KEY_STAFF_POS[number]
 
 
 def note_cy(y0: float, number: int, is_black: bool) -> float:
-    """Y coordinate for center of note circle. Uses pitch order; centers align with staff lines or spaces."""
-    idx = _pitch_index(number, is_black)
-    position = _staff_position(idx)
+    """Y coordinate for note center: diatonic staff steps for white keys; midway between those for black keys."""
+    position = _staff_position(number, is_black)
     return staff_y(y0, position)
 
 
 def note_position(number: int, is_black: bool) -> float:
-    """Staff position (0=top, 4=bottom). For ledger line logic: >4 = below staff, <0 = above."""
-    idx = _pitch_index(number, is_black)
-    return _staff_position(idx)
+    """Staff position (0=top line, 4=bottom line). For ledger line logic: >4 = below staff, <0 = above."""
+    return _staff_position(number, is_black)
 
 
 @dataclass
